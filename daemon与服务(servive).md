@@ -22,6 +22,9 @@ is-active: 目前有没有在运行中
 is-enable: 开机时有没有要默认启动服务  
 比如要查看atd这个服务，systemctl status atd.service
 
+### 通过systemctl
+* systemctl [command] [--type=TYPE] [-all]
+* command有，list-units,依据unit显示目前启动的unit,加上--all才会列出没有启动的。list-unit-files,依据/usr/lib/systemd/system/内的文件，把所有文件列表显示。TYPE就是下面写出的unit类型分类
 
 
 ###  *** 以下了解即可 ***
