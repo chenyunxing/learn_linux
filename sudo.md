@@ -14,7 +14,7 @@
 ### sudo权限的增加方法
 * root用户执行visudo修改/etc/sudoers，让这个账号能获得全部或者部分的root功能。
 * 1、可以手动执行visudo，在大约89行的地方，模仿root   ALL=(ALL)增加一行属于想增加用户的内容。
-* 2、可以手动编辑sudoers，也是差不多98行，可以看到 root  ALL=(ALL) ALL
+* 2、可以手动编辑sudoers，也是差不多98行，可以看到 root  ALL=(ALL) ALL,如果希望免密使用则后缀为NOPASSWD:ALL 
 * 四个组件意义是用户账号，登录者的来源主机名【即指定信任来源主机】，可切换的身份，可执行的命令【这里需要绝对路径】
 * 可执行命令的限制，也可以限制可传入参数，如myuser ALL=(root) !/usr/bin/passwd,/usr/bin/passwd [A-za-z*],!/usr/bin/passwd root 前面的感叹号代表不可执行的意思
 * 设置一个用户组可以sudo，需要修改的是，%用户组代替原有用户名的地方，意思即为此用户组可以执行sudo
